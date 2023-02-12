@@ -7,9 +7,6 @@ Networking::Networking() {
     this->socketFileDescriptor = -1;
     this->isAlive= false;
 }
-Networking::Networking(const Networking &toCopy) {
-    dup2(toCopy.socketFileDescriptor, this->socketFileDescriptor);
-}
 void Networking::acceptConection(const Networking &ServerObj) {
 
     struct sockaddr_in clientAddr{};
